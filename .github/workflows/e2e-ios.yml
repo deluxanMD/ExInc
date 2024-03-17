@@ -37,6 +37,7 @@ jobs:
         with:
           bundler-cache: true
           ruby-version: '3.3'
+      - run: bundle exec rake
 
       - name: Cache CocoaPods
         id: cache-cocoapods
