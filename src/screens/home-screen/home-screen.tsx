@@ -1,11 +1,12 @@
-import { View, Text } from 'react-native';
+import { Text } from 'react-native';
 import React from 'react';
+import * as S from './home-screen.styles';
 
 const HomeScreen = () => {
   return (
-    <View>
+    <S.SAProvider>
       <Text>HomeScreen</Text>
-    </View>
+    </S.SAProvider>
   );
 };
 
