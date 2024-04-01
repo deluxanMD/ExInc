@@ -1,12 +1,13 @@
 import { StyleSheet } from 'react-native';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
+import Octicons from 'react-native-vector-icons/Octicons';
 import HomeScreen from '../screens/home-screen/home-screen';
-import TransactionsScreen from '../screens/transactions-screen/transactions-screen';
-import BudgetScreen from '../screens/budget-screen/budget-screen';
-import ProfileScreen from '../screens/profile-screen/profile-screen';
+import MatchesScreen from '../screens/matches-screen/matches-screen';
+import SeriesScreen from '../screens/series-screen/series-screen';
 import { useTheme } from 'react-native-paper';
+import VideoScreen from '../screens/video-screen/video-screen';
+import MoreScreen from '../screens/more-screen/more-screen';
 
 const Tab = createMaterialBottomTabNavigator();
 
@@ -18,45 +19,58 @@ const BottomNavigation = () => {
       barStyle={styles.barStyle}
       activeIndicatorStyle={styles.activeIndicatorStyle}
       activeColor={theme.colors.primary}
-      inactiveColor={theme.colors.outlineVariant}
-      labeled={false}>
+      inactiveColor={theme.colors.outlineVariant}>
       <Tab.Screen
         name="Home"
         component={HomeScreen}
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="home" color={color} size={30} />
+            <Octicons name="home" color={color} size={30} />
           ),
         }}
       />
       <Tab.Screen
-        name="Transactions"
-        component={TransactionsScreen}
+        name="Matches"
+        component={MatchesScreen}
         options={{
-          tabBarLabel: 'Transactions',
+          tabBarLabel: 'Matches',
           tabBarIcon: ({ color }) => (
-            <Ionicons name="arrow-redo" color={color} size={30} />
+            <MaterialCommunityIcons name="cricket" color={color} size={30} />
           ),
         }}
       />
       <Tab.Screen
-        name="Budget"
-        component={BudgetScreen}
+        name="Series"
+        component={SeriesScreen}
         options={{
-          tabBarLabel: 'Budget',
+          tabBarLabel: 'Series',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="chart-pie" color={color} size={30} />
+            <MaterialCommunityIcons name="shield" color={color} size={30} />
           ),
         }}
       />
       <Tab.Screen
-        name="Profile"
-        component={ProfileScreen}
+        name="Video"
+        component={VideoScreen}
         options={{
-          tabBarLabel: 'Profile',
+          tabBarLabel: 'Video',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="account" color={color} size={30} />
+            <Octicons name="video" color={color} size={30} />
+          ),
+        }}
+      />
+      <Tab.Screen
+        name="More"
+        component={MoreScreen}
+        options={{
+          tabBarLabel: 'More',
+          tabBarIcon: ({ color }) => (
+            <MaterialCommunityIcons
+              name="dots-vertical"
+              color={color}
+              size={30}
+            />
           ),
         }}
       />
@@ -68,7 +82,7 @@ const styles = StyleSheet.create({
   barStyle: {
     height: 80,
     elevation: 10,
-    backgroundColor: 'transparent',
+    backgroundColor: '#FFFFFF',
   },
   activeIndicatorStyle: {
     backgroundColor: 'transparent',
