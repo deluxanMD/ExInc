@@ -1,12 +1,12 @@
 import { View, Text } from 'react-native';
 import React from 'react';
 
-const BudgetScreen = () => {
+const MatchesScreen = () => {
   return (
     <View>
-      <Text>BudgetScreen</Text>
+      <Text>MatchesScreen</Text>
     </View>
   );
 };
 
-export default BudgetScreen;
+export default MatchesScreen;
