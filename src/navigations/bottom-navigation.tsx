@@ -26,7 +26,7 @@ const BottomNavigation = () => {
         options={{
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
-            <Octicons name="home" color={color} size={30} />
+            <Octicons name="home" color={color} size={26} />
           ),
         }}
       />
@@ -36,7 +36,7 @@ const BottomNavigation = () => {
         options={{
           tabBarLabel: 'Matches',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="cricket" color={color} size={30} />
+            <MaterialCommunityIcons name="cricket" color={color} size={26} />
           ),
         }}
       />
@@ -46,7 +46,7 @@ const BottomNavigation = () => {
         options={{
           tabBarLabel: 'Series',
           tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="shield" color={color} size={30} />
+            <MaterialCommunityIcons name="shield" color={color} size={26} />
           ),
         }}
       />
@@ -56,7 +56,7 @@ const BottomNavigation = () => {
         options={{
           tabBarLabel: 'Video',
           tabBarIcon: ({ color }) => (
-            <Octicons name="video" color={color} size={30} />
+            <Octicons name="video" color={color} size={26} />
           ),
         }}
       />
@@ -69,7 +69,7 @@ const BottomNavigation = () => {
             <MaterialCommunityIcons
               name="dots-vertical"
               color={color}
-              size={30}
+              size={26}
             />
           ),
         }}
@@ -85,6 +85,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#FFFFFF',
   },
   activeIndicatorStyle: {
+    borderRadius: 5,
     backgroundColor: 'transparent',
   },
 });
