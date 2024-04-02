@@ -1,15 +1,17 @@
 import React from 'react';
-import { Appbar } from 'react-native-paper';
+import { Appbar, useTheme } from 'react-native-paper';
 import * as S from './home-screen-app-bar.styles';
 
 const HomeScreenAppbar = () => {
+  const theme = useTheme();
+
   return (
-    <S.AppbarHeader>
-      <Appbar.BackAction onPress={() => {}} />
-      <Appbar.Content title="Title" />
-      <Appbar.Action icon="calendar" onPress={() => {}} />
-      <Appbar.Action icon="magnify" onPress={() => {}} />
-    </S.AppbarHeader>
+    <S.AppbarContainer style={{ backgroundColor: theme.colors.primary }}>
+      <S.AppbarHeader mode="center-aligned">
+        <Appbar.Content title="CRIC" color="white" />
+        <Appbar.Action icon="magnify" color="white" onPress={() => {}} />
+      </S.AppbarHeader>
+    </S.AppbarContainer>
   );
 };
 

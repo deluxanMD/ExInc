@@ -5,14 +5,16 @@ import {
   StatusBar,
   StyleSheet,
   useColorScheme,
+  Platform,
 } from 'react-native';
-import { PaperProvider } from 'react-native-paper';
+import { PaperProvider, useTheme } from 'react-native-paper';
 
 import { Colors } from 'react-native/Libraries/NewAppScreen';
 import StackNavigation from './src/navigations/stack-navigation';
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
+  const theme = useTheme();
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
@@ -22,8 +24,18 @@ function App(): React.JSX.Element {
     <SafeAreaView style={styles.container}>
       <PaperProvider>
         <StatusBar
-          barStyle={isDarkMode ? 'light-content' : 'dark-content'}
-          backgroundColor={backgroundStyle.backgroundColor}
+          barStyle={
+            Platform.OS === 'android'
+              ? 'light-content'
+              : isDarkMode
+              ? 'light-content'
+              : 'dark-content'
+          }
+          backgroundColor={
+            Platform.OS === 'android'
+              ? theme.colors.primary
+              : backgroundStyle.backgroundColor
+          }
         />
         <NavigationContainer>
           <StackNavigation />
